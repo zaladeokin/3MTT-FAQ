@@ -1,0 +1,27 @@
+details:first-of-type {
+    margin-top: 5em;
+}
+
+details:last-of-type {
+    margin-bottom: 5em;
+}
+
+details {
+    width: 95%;
+    border: 1px solid #000;
+}
+
+details summary {
+    padding: 1%;
+}
+
+details[open] summary {
+    color: #5e0505;
+}
+
+details[open] summary~p {
+    padding: 2%;
+    background-color: #000;
+    color: #fff;
+    text-indent: 5vw;
+}

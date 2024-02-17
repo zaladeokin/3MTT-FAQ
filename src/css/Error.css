@@ -1,0 +1,26 @@
+main section{
+    display: block;
+    text-align: center;
+}
+
+button{
+    display:  block;
+    width:  fit-content;
+    margin: 2em auto;
+    border-radius: 1em;
+    padding: 2%;
+    background-color: #d60000;
+    color: #fff;
+}
+
+button:hover{
+    color: #d60000;
+    background-color: #fff;
+}
+
+a{
+    text-decoration: none;
+}
+strong{
+    display: block;
+}

@@ -1,0 +1,32 @@
+/* Header.js */
+
+header {
+    border-bottom: 1px solid #000;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+header img {
+    width: 20%;
+}
+
+h1 {
+    min-width: 50%;
+    font-size: 1.5em;
+    padding: 0.2em;
+    letter-spacing: 0.1em;
+    color: #d60000;
+}
+
+@media screen and (min-width: 500px) {
+    header img {
+        width: 10%;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    header img {
+        width: 5%;
+    }
+}

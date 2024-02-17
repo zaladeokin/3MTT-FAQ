@@ -1,0 +1,27 @@
+/* Layout.js */
+
+main {
+    padding: 2%;
+}
+
+main section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin: 1em 0;
+}
+
+h3 {
+    font-size: 1em;
+    max-width: 90%;
+}
+
+main img {
+    display: block;
+    max-width: 40%;
+}
