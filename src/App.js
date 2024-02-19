@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './css/App.css';
 ////Delete import below when development is completed
 import sampleData from './resources/data';
