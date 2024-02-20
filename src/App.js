@@ -28,7 +28,10 @@ function App() {
       setLoading(false);
     }).catch((err)=>{
       console.log("Error: Request not successful.");
-      console.log(err);
+      if(process.env.NODE_ENV === "development"){
+        console.log(err);
+        console.log("Error: Request not successful.");
+      };
       //Delete setData below when development is completed
       setData(sampleData)
       setLoading(false);
@@ -39,7 +42,7 @@ function App() {
   if(loading){
     content= (<img alt='loading' src={loader} />);
   }else if(data !== false && loading === false){
-    questionList= data.questions.reverse().map((content, index) => <Card info={content} firstItem={index === 0 ? true: false} />);
+    questionList= data.questions.reverse().map((content, index) => <Card info={content} firstItem={index === 0 ? true: false} key={content.id}/>);
     content= (<Layout product_info={data.product}> {questionList} </Layout>);
   }else{
     content= (<Error  />);
