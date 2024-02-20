@@ -24,7 +24,7 @@ function App() {
     .then((res) => res.json())
     .then((parseData)=>{
       console.log(parseData);
-      setData(parseData);
+      if(parseData.request_info.success) setData(parseData);
       setLoading(false);
     }).catch((err)=>{
       console.log("Error: Request not successful.");

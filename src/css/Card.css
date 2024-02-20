@@ -1,3 +1,10 @@
+details {
+    text-align: initial;
+    width: 95%;
+    border: 1px solid #000;
+    margin: 2em auto;
+}
+
 details:first-of-type {
     margin-top: 5em;
 }
@@ -6,13 +13,8 @@ details:last-of-type {
     margin-bottom: 5em;
 }
 
-details {
-    text-align: initial;
-    width: 95%;
-    border: 1px solid #000;
-}
-
 details summary {
+    font-weight: 800;
     padding: 1%;
 }
 

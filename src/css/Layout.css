@@ -24,4 +24,11 @@ h3 {
 main img {
     display: block;
     max-width: 40%;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 900px){
+    main img{
+        margin: 0;
+    }
 }
