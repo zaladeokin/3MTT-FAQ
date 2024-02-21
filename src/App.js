@@ -14,6 +14,7 @@ import { useEffect, useState } from 'react';
 function App() {
   const [data, setData]= useState(false);
   const [loading, setLoading]= useState(true);
+  const [keyword, setKeyword]= useState("");
   let questionList, content;
 
   useEffect(()=>{
@@ -42,8 +43,15 @@ function App() {
   if(loading){
     content= (<img alt='loading' src={loader} />);
   }else if(data !== false && loading === false){
-    questionList= data.questions.reverse().map((content, index) => <Card info={content} firstItem={index === 0 ? true: false} key={content.id}/>);
-    content= (<Layout product_info={data.product}> {questionList} </Layout>);
+    if (keyword !== '') {
+      //Search functionality | search scope include Question and Answer.
+      let reg = new RegExp(keyword, "gi");
+      questionList = data.questions.filter((content) => (content.question.search(reg) !== -1 || content.answer.search(reg) !== -1));
+    }else{
+      questionList = data.questions;
+    }
+    questionList= questionList.reverse().map((content, index) => <Card info={content} firstItem={index === 0 ? true: false} key={content.id}/>);
+    content= (<Layout product_info={data.product} search={{ value: keyword, set: setKeyword }}> {questionList} </Layout>);
   }else{
     content= (<Error  />);
   }
