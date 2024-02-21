@@ -50,7 +50,9 @@ function App() {
     }else{
       questionList = data.questions;
     }
-    questionList= questionList.reverse().map((content, index) => <Card info={content} firstItem={index === 0 ? true: false} key={content.id}/>);
+
+    if(questionList.length > 0) questionList= questionList.reverse().map((content, index) => <Card info={content} firstItem={index === 0 ? true: false} key={content.id}/>);
+    else questionList = (<p id='no-match'>No result found.</p>);
     content= (<Layout product_info={data.product} search={{ value: keyword, set: setKeyword }}> {questionList} </Layout>);
   }else{
     content= (<Error  />);
