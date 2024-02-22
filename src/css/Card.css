@@ -14,10 +14,11 @@ details:last-of-type {
 }
 
 details summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
     font-size: 1em;
-    font-weight: 500;
-    padding: 2.5%;
-    list-style-type: none;
 }
 
 details summary::-webkit-details-marker {/*For safari browser*/
@@ -25,10 +26,14 @@ details summary::-webkit-details-marker {/*For safari browser*/
 }
 
 details>summary::after {
-    font-weight: 1000;
-    font-size: 0.8em;
+    font-weight: 500;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 15vw;
     content: '+';
-    float: right;
 }
 
 details[open]>summary::after {
@@ -45,4 +50,27 @@ details[open] summary~p {
     color: #fff;
     text-indent: 5vw;
     text-align: justify;
+}
+
+details summary div{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow-wrap: break-word;
+    text-align: justify;
+    padding: 0 1%;
+    border-right: 1px inset #000;
+}
+
+@media screen and (min-width: 500px) {
+    details>summary::after {
+        width: 10vw;
+    }
+}
+
+
+@media screen and (min-width: 900px) {
+    details>summary::after {
+        width: 5vw;
+    }
 }

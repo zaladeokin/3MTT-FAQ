@@ -12,7 +12,7 @@ function Card({info, firstItem}) {
 
     return(
         <details open={firstItem} id={info.id} onClick={()=> handleClick(info.id)}>
-            <summary>{info.question}</summary>
+            <summary><div>{info.question}</div></summary>
             <p>{info.answer}</p>
           </details>
     );
