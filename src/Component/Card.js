@@ -1,20 +1,17 @@
 import '../css/Card.css'
 
 function Card({info, firstItem}) {
-    const handleClick= (e)=>{
+    const handleClick= (id)=>{
+
         let allDet= document.querySelectorAll("details");
 
         allDet.forEach((det)=>{
-            det.removeAttribute('open');
+            if(id !== det.id) det.open= false;
         });
-
-        let att= document.createAttribute("open");
-        att.value= true;
-        e.target.setAttributeNode(att)
     }
 
     return(
-        <details open={firstItem} onClick={handleClick}>
+        <details open={firstItem} id={info.id} onClick={()=> handleClick(info.id)}>
             <summary>{info.question}</summary>
             <p>{info.answer}</p>
           </details>

@@ -28,7 +28,6 @@ function App() {
       if(parseData.request_info.success) setData(parseData);
       setLoading(false);
     }).catch((err)=>{
-      console.log("Error: Request not successful.");
       if(process.env.NODE_ENV === "development"){
         console.log(err);
         console.log("Error: Request not successful.");
