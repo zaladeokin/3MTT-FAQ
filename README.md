@@ -7,6 +7,7 @@ Welcome to the Frequently Asked Questions (FAQ) repository! This repository is d
 - **Search functionaity**: User can easily navigate through questions by searching for related keyword.
 - **Toggle Content**: Answer to questin can be hide or show, thereby enhancing easy scrolling.
 - **API**: Rainforest API- provides data on Amazon products.
+- **Responsive Design**: Enjoy a seamless experience across various devices and screen sizes.
 
 ## Technologies Used
 
