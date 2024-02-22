@@ -1,7 +1,7 @@
 details {
     text-align: initial;
     width: 95%;
-    border: 1px solid #000;
+    border: 2px outset #000;
     margin: 2em auto;
 }
 
@@ -14,8 +14,25 @@ details:last-of-type {
 }
 
 details summary {
-    font-weight: 800;
-    padding: 1%;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 2.5%;
+    list-style-type: none;
+}
+
+details summary::-webkit-details-marker {/*For safari browser*/
+    display: none;
+}
+
+details>summary::after {
+    font-weight: 1000;
+    font-size: 0.8em;
+    content: '+';
+    float: right;
+}
+
+details[open]>summary::after {
+    content: "-";
 }
 
 details[open] summary {
@@ -27,4 +44,5 @@ details[open] summary~p {
     background-color: #000;
     color: #fff;
     text-indent: 5vw;
+    text-align: justify;
 }
