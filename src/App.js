@@ -24,7 +24,6 @@ function App() {
     // fetch("https://api.rainforestpi.com/request?api_key=3B20726ADA78480FAE237FD784AB4127&type=questions&amazon_domain=amazon.com&asin=B073JYC4XM&page=1&output=json")
     .then((res) => res.json())
     .then((parseData)=>{
-      console.log(parseData);
       if(parseData.request_info.success) setData(parseData);
       setLoading(false);
     }).catch((err)=>{
@@ -45,7 +44,10 @@ function App() {
     if (keyword !== '') {
       //Search functionality | search scope include Question and Answer.
       let reg = new RegExp(keyword, "gi");
-      questionList = data.questions.filter((content) => (content.question.search(reg) !== -1 || content.answer.search(reg) !== -1));
+      questionList = data.questions.filter((content) =>{
+        if(content.question !== undefined && content.answer !== undefined) return (content.question.search(reg) !== -1 || content.answer.search(reg) !== -1);
+        else return false
+      });
     }else{
       questionList = data.questions;
     }
