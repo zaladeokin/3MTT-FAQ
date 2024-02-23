@@ -1,6 +1,6 @@
 import './css/App.css';
 ////Delete import below when development is completed
-import sampleData from './resources/data';
+// import sampleData from './resources/data';
 
 import loader from './img/loader.gif';
 
@@ -18,10 +18,10 @@ function App() {
   let questionList, content;
 
   useEffect(()=>{
-    // fetch("https://api.rainforestapi.com/request?api_key=3B20726ADA78480FAE237FD784AB4127&type=questions&amazon_domain=amazon.com&asin=B073JYC4XM&page=1&output=json")
+    fetch("https://api.rainforestapi.com/request?api_key=3B20726ADA78480FAE237FD784AB4127&type=questions&amazon_domain=amazon.com&asin=B073JYC4XM&page=1&output=json")
 
     //Delete fetch below when development is completed
-    fetch("https://api.rainforestpi.com/request?api_key=3B20726ADA78480FAE237FD784AB4127&type=questions&amazon_domain=amazon.com&asin=B073JYC4XM&page=1&output=json")
+    // fetch("https://api.rainforestpi.com/request?api_key=3B20726ADA78480FAE237FD784AB4127&type=questions&amazon_domain=amazon.com&asin=B073JYC4XM&page=1&output=json")
     .then((res) => res.json())
     .then((parseData)=>{
       console.log(parseData);
@@ -33,7 +33,7 @@ function App() {
         console.log("Error: Request not successful.");
       };
       //Delete setData below when development is completed
-      setData(sampleData)
+      // setData(sampleData)
       setLoading(false);
       //
     });
